@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit Platform</title>
+  <link rel="icon" href="../../trade.ico" type="image/x-icon">
+  <link rel="stylesheet" href="deposit.css">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>
+      <img src="../images/candle.png" style="max-width:10%;" class="rounded me-2" alt="...">
+      Deposit Platform
+    </h1>
+    <nav>
+      <a href="#deposit">Deposit</a>
+      <a href="#stocks">Stocks</a>
+      <a href="#cryptos">Cryptos</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="site-header sticky-top py-0">
+      <div class="container-fluid p-0 bg-light">
+       <menu style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb" class="menu-header position-relative">
+    <ol class="breadcrumb p-3 bg-light rounded shadow-sm d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <li class="breadcrumb-item h5 mb-0">
+               
+                    <a href="earn.html" class="text-danger text-decoration-none">Refer & Earn</a>
+                
+            </li>
+            <li class="breadcrumb-item active h5 mb-0" aria-current="page">Broker</li>
+        </div>
+        <!-- Sidebar Menu Trigger -->
+    <div id="menu-toggle" class="menu-dots" onclick="toggleSidebar()">
+  <span class="dot">•</span>
+  <span class="dot">•</span>
+  <span class="dot">•</span>
+</div>
+
+    </ol>
+</menu>
+<!-- Sidebar Menu -->
+<div id="sidebar-menu" class="sidebar-menu">
+<button class="close-btn" onclick="toggleSidebar()">✖</button>
+   
+ <ul class="menu-options list-unstyled m-0 p-4">
+    <li><a href="#" onclick="toggleDarkMode()"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21.64 13.62a1 1 0 0 0-1.15-.37A9.23 9.23 0 0 1 12 21 9.34 9.34 0 0 1 4.74 9.9 1 1 0 0 0 4.37 8.77 9.23 9.23 0 0 1 12 3a1 1 0 0 0 .64-1.82A11.21 11.21 0 1 0 22 13a1 1 0 0 0-.36.62z"/></svg> Dark Mode</a></li>
+    <li><a href="convert.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21 2H3a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM3 4h18v2H3zm18 16H3V8h18z"/></svg> History</a></li>
+    <li><a href="index.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M10.5 8.5a1 1 0 0 1 1 1V14a1 1 0 0 0 1 1H18a1 1 0 0 0 0-2h-4.5v-2.5a1 1 0 0 1 1-1h2.75a1 1 0 0 0 0-2h-2.75a3 3 0 0 0-3 3V12h-1a1 1 0 0 0-1-1V9.5a1 1 0 0 1 1-1zM9 15a1 1 0 1 0 1 1 1 1 0 0 0-1-1zm2-2a1 1 0 1 0 1 1 1 1 0 0 0-1-1zm-2-1a1 1 0 1 0 1 1 1 1 0 0 0-1-1zM15 7a1 1 0 1 0-1-1 1 1 0 0 0 1 1z"/></svg> Log Out</a></li>
+</ul>
+
+</div>
+      </div>
+    </header>
+
+    <section id="deposit" class="section">
+      <h2>Fund Your Account</h2>
+      <div class="deposit-container">
+        <!-- Wallet Selector -->
+        <div class="wallet-selection">
+    <div class="wallet-container">
+        <label for="currency">Select Wallet:</label>
+        <select id="currency" onchange="updateQRCode()">
+            <option value="eth" data-address="0x6416C13465D6117692B22fa40c2D0fdF7C2657fd" data-asset="c60">Ethereum (ETH)</option>
+            <option value="btc" data-address="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" data-asset="btc">Bitcoin (BTC)</option>
+            <option value="usdt" data-address="0x6416C13465D6117692B22fa40c2D0fdF7C2657fd" data-asset="usdt">Tether (USDT)</option>
+        </select>
+    </div>
+</div>
+
+<!-- Amount Inputs -->
+<div class="amount-inputs">
+    <label for="dollars">Amount in USD ($):</label>
+    <input type="number" id="dollars" placeholder="Enter amount (min $100)" min="100" onchange="convertToCrypto()">
+    <div id="dollar-feedback" class="feedback-text"></div>
+
+    <label for="crypto">Amount in Cryptocurrency:</label>
+    <input type="text" id="crypto" placeholder="Crypto amount" disabled>
+</div>
+
+		<div class="form-feedback">
+        <p id="conversion-feedback"></p>
+    </div>
+<div>
+       
+
+    
+
+       
+
+        <!-- QR Code Display -->
+        <div class="qr-container" id="qr-code">
+          <div class="card">
+            <h2>Deposit Funds</h2>
+            <img id="qrImage" 
+                 src="https://api.qrserver.com/v1/create-qr-code/?data=https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263&size=150x150" 
+                 alt="QR Code" 
+                 class="qr-code"><br>
+            <a id="depositLink" 
+               href="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
+               title="Make a deposit" 
+               target="_blank">Deposit Now</a>
+            <p>Scan the QR code to deposit funds</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stocks Section -->
+    <section id="stocks" class="section">
+      <h2>Available Stocks</h2>
+      <ul class="stock-list">
+        <li><strong>Apple ($AAPL):</strong> $180.27</li>
+        <li><strong>Microsoft ($MSFT):</strong> $350.17</li>
+        <li><strong>Amazon ($AMZN):</strong> $120.55</li>
+        <li><strong>Google ($GOOGL):</strong> $2900.12</li>
+      </ul>
+    </section>
+
+    <!-- Cryptocurrencies Section -->
+    <section id="cryptos" class="section">
+      <h2>Available Cryptocurrencies</h2>
+      <ul id="crypto-list" class="crypto-list">
+        <!-- Prices will be dynamically populated here -->
+      </ul>
+    </section>
+
+   
+    <div class="fixed-image">
+      <a href="../support-chat/public/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24">
+          <path fill="#ea1515" d="M11.75 19h-.25q-3.55 0-6.025-2.475T3 10.5t2.475-6.025T11.5 2q1.775 0 3.313.662t2.7 1.825t1.824 2.7T20 10.5q0 3.35-1.888 6.225t-4.762 4.5q-.25.125-.5.138t-.45-.113t-.35-.325t-.175-.475zm-.275-3.025q.425 0 .725-.3t.3-.725t-.3-.725t-.725-.3t-.725.3t-.3.725t.3.725t.725.3M9.3 8.375q.275.125.55.013t.45-.363q.225-.3.525-.463T11.5 7.4q.6 0 .975.337t.375.863q0 .325-.187.65t-.663.8q-.625.55-.925 1.038t-.3.987q0 .3.213.513t.512.212t.5-.225t.3-.525q.125-.425.45-.775t.6-.625q.525-.525.788-1.05t.262-1.05q0-1.15-.788-1.85T11.5 6q-.8 0-1.475.388t-1.1 1.062q-.15.275-.038.538t.413.387"/>
+        </svg>
+      </a>
+    </div>
+
+    <footer>
+      <p>&copy; 2017-2024 Trading Hub. All rights reserved.</p>
+    </footer>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar-menu');
+        const isOpen = sidebar.style.right === '0px';
+        sidebar.style.right = isOpen ? '-250px' : '0px';
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+</script>
+    <script src="deposit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  </main>
+</body>
+</html>

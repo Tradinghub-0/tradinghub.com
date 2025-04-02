@@ -1,0 +1,227 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background: black;
+  color: #333;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(90deg, #34c4b6, #006a58);
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+menu {
+    
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .breadcrumb {
+    margin: 0;
+    background: transparent;
+  }
+
+  .breadcrumb-item a {
+    color: #007bff;
+    transition: color 0.3s;
+  }
+
+  .breadcrumb-item a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item.active {
+    color: #6c757d;
+    font-weight: bold;
+  }
+
+  .breadcrumb-item {
+    padding: 0 5px;
+  }
+
+  .breadcrumb p {
+    margin: 0;
+  }
+
+  menu:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.5s;
+  }
+
+
+/* Search Bar */
+.search-section {
+  background-color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#search-input {
+  padding: 12px;
+  width: 60%;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+#search-input:focus {
+  border-color: #34c4b6;
+}
+
+/* Overview Section */
+.overview-section {
+  background-color: silver;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: linear-gradient(135deg, #006a58, #34c4b6);
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Crypto List Section */
+.crypto-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.crypto-card {
+  background: linear-gradient(135deg, #006a58, #34c4b6);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.crypto-card:hover {
+  transform: translateY(-10px);
+}
+
+.crypto-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.crypto-card .price {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.crypto-card p {
+  font-size: 1rem;
+}
+
+.crypto-card .more-link {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #34c4b6;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.crypto-card .more-link:hover {
+  background-color: #006a58;
+}
+
+/* Chart Section */
+.chart-section {
+  background-color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#price-chart {
+  max-width: 100%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* Pagination Section */
+.pagination-section {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#pagination button {
+  background: #34c4b6;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 10px;
+  transition: background 0.3s;
+}
+
+#pagination button:hover {
+  background: #006a58;
+}
+ .fixed-image {
+      position: fixed;
+      top: 85%; 
+      right: 40px; 
+      z-index: 1000;
+    }
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Trading Hub v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/product/">
+
+    
+
+    <link rel="icon" href="../../trade.ico" type="image/x-icon">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+	  
+	  .display-5 a{text-decoration:none;}
+	  .w-50 btn btn-lg btn-warning a{text-decoration:none;}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+	   .fixed-image {
+      position: fixed;
+      top: 85%; 
+      right: 40px; 
+      z-index: 1000;
+    }
+.enhanced-image {
+background-image:url('../images/back.png');
+background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0; /* Removes default body margin */
+    padding: 0%; /* Optional: Adjust or reset padding */
+    /* Makes sure body takes full viewport height */
+	max-width:100%;
+   
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(1.05); /* Adjust contrast and brightness */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+
+
+  .enhanced-image:hover {
+    transform: scale(1.03); /* Subtle zoom effect */
+    filter: contrast(1.2) brightness(1.1);
+  }
+
+ 
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+	  
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+	  
+	  .fixed-image {
+      position: fixed;
+      top: 520px; 
+       right: 50px; 
+      z-index: 1000;
+    }
+
+   mark {
+    background-color: rgba(255, 99, 71, 0.3); /* Soft red (tomato), slightly transparent */
+    color: #fff; /* Dark text for readability */
+    padding: 0.1em 0.2em; /* Slight padding for a more natural, hand-highlighted feel */
+    border-radius: 3px; /* Rounded corners for a smoother look */
+    font-weight: normal; /* Regular weight for clarity */
+    font-style: normal; /* Keep the text in normal style */
+    box-shadow: none; /* No shadow to keep it simple */
+	 text-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 -1px 1px rgba(255, 255, 255, 0.8);
+  }
+  .lead {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .lead {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .display-4 {
+      font-size: 2rem; /* Smaller heading on mobile */
+    }
+  }
+
+  /* Cute and appropriate button styling */
+  .btn-outline-danger {
+    border-color: #f76c6c;
+    color: #f76c6c;
+    padding: 0.6em 1.2em;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .btn-outline-danger:hover {
+    background-color: #f76c6c;
+    color: white;
+  }
+
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="site-header sticky-top py-1">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2" href="#" aria-label="Product">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" 
+	  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" 
+	  viewBox="0 0 24 24"><title>Trading Hub</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+    </a>
+    <a class="py-2 d-none d-md-inline-block" href="log.html">Referral & Copy Traders</a>
+    <a class="py-2 d-none d-md-inline-block" href="log.html">Sign in</a>
+	<a class="py-2 d-none d-md-inline-block" href="log.html">Deposit</a>
+    <a class="py-2 d-none d-md-inline-block" href="log.html">Broker</a>
+    <a class="py-2 d-none d-md-inline-block" href="signup.html">Join now</a>
+  </nav>
+</header>
+
+<main>
+<div class="enhanced-image">
+
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left">
+  <div class="py-5 text-left" style="float:left;">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+	<img src="../images/candle.png" style="max-width: 20%; height:auto;">
+      <h1 class="glisten-text display-4 text-white fw-normal">Trading Hub</h1>
+      <p class="lead text-white fw-small">Invest now and see your profit <mark>multiply in an instant!</mark> Be one of the 1,000,000 people to sign up.</p>
+      <a class="btn btn-outline-danger" href="signup.html">Sign Up</a>
+    </div>
+   </div>
+  </div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">
+		<a class="text-danger" href="log.html">Refer & Earn</h2></a>
+        <p class="lead">Multipy your profits in seconds.</p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 400px; height: 450px; border-radius: 21px 21px 10px 10px; position: relative;"><a href="earn.html">
+	  <img src="../images/reward.png" class="enhanced-image" class="rounded float-start" class="img-thumbnail" alt="Refer & Earn" style="width:400px; height:400px; margin-bottom:20px; "> 
+	  </div>
+    </div></a>
+	
+    <div class="text-bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+	  <div class="shadow-lg p-3 mb-5 bg-body rounded">
+        <h2 class="display-5">
+		<a class="text-danger" href="log.html">Deposit</h2></a>
+        <p class="lead">Invest, invest, invest!</p>
+      </div>
+      <div  style="width: 100%; height: 450px; border-radius: 21px 21px 10px 10px;"><a href="#">
+	  <img src="../images/deposit.png" class="enhanced-image" class="rounded float-start"  class="img-thumbnail" alt="Deposit" style="max-width: 100%; height: 400px;
+	 margin-top: 40px;"></div>
+    </div></a>
+  </div></div>
+
+ 
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+	  <div class="shadow-lg p-3 mb-5 bg-body rounded">
+        <h2 class="display-5">
+		<a class="text-danger" href="log.html">Broker</h2></a>
+        <p class="lead">Check various currencies in serious high rates!</p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 100%; height: 400px; border-radius: 21px 21px 10px 10px;"><a href="broker.html">
+	  <img src="../images/rr.png"  class="enhanced-image" class="rounded float-start" class="img-thumbnail" alt="Broker" style="max-width: 100%; height:400px;" >
+	  
+	   </div></a>
+    </div>
+  </div>
+  
+  <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+	
+      <div class="my-3 py-3">
+        <h2 class="display-5">
+		<a class="text-danger" href="log.html"> Log in</h2></a>
+        <p class="lead">Sign in to continue your progress.</p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 100%; height: 400px; border-radius: 21px 21px 10px 10px;">
+	  <a href="log.html">
+	  <img src="../images/log.png" class="enhanced-image" class="rounded float-start" class="img-thumbnail" alt="Sign-in" style="width: 100%; height: auto;  
+	 "></div>
+    </div></div></a>
+
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+	<div class="shadow-lg p-3 mb-5 bg-body rounded">
+      <div class="my-3 py-3">
+        <h2 class="display-5">
+		<a class="text-danger" href="signup.html">Join Now!</h2></a>
+        <p class="lead">What are you waiting for? Sign up now!</p>
+      </div>
+     <div class="bg-body shadow-sm mx-auto" style="width: 100%; height:auto; border-radius: 21px 21px 10px 10px; " >
+	 <a href="signup.html">
+	  <img src="../images/join.png" class="enhanced-image" style="max-width: 100%; height:auto;"></div></a>
+    </div></div></div>
+
+   
+  
+ <a href="../support-chat/public/index.html">
+  <div class="fixed-image">
+  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="#ea1515" d="M11.75 19h-.25q-3.55 0-6.025-2.475T3 10.5t2.475-6.025T11.5 2q1.775 0 3.313.662t2.7 1.825t1.824 2.7T20 10.5q0 3.35-1.888 6.225t-4.762 4.5q-.25.125-.5.138t-.45-.113t-.35-.325t-.175-.475zm-.275-3.025q.425 0 .725-.3t.3-.725t-.3-.725t-.725-.3t-.725.3t-.3.725t.3.725t.725.3M9.3 8.375q.275.125.55.013t.45-.363q.225-.3.525-.463T11.5 7.4q.6 0 .975.337t.375.863q0 .325-.187.65t-.663.8q-.625.55-.925 1.038t-.3.987q0 .3.213.513t.512.212t.5-.225t.3-.525q.125-.425.45-.775t.6-.625q.525-.525.788-1.05t.262-1.05q0-1.15-.788-1.85T11.5 6q-.8 0-1.475.388t-1.1 1.062q-.15.275-.038.538t.413.387"/></svg>
+  </a>
+  </div>
+  
+  
+</main>
+
+<footer class="container py-5" style="background-color: #f8f9fa; border-top: 1px solid #ddd;">
+  <div class="row">
+  <!-- Logo and About Section -->
+  <div class="col-md-6 mb-4 text-center text-md-start"py-3>
+    <img src="../images/candle.png" alt="Trading Hub Logo" class="img-fluid rounded" style="max-width: 80px;">
+    <h5 class="mt-3">Trading Hub</h5>
+    <p class="lead">
+      Designed and built with passion by the Trading Hub team, with contributions from our amazing community.
+    </p>
+    <small class="text-muted">&copy; 2017 – 2024. All rights reserved.</small>
+  </div>
+<!-- Newsletter Signup -->
+  <div class="col-md-6 mb-4 py-5">
+    <h5>Stay Updated</h5>
+    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+    <form class="d-flex" id="subscribeForm">
+  <input 
+    type="email" 
+    class="form-control me-2" 
+    id="emailInput" 
+    placeholder="Enter your email" 
+    aria-label="Email" 
+    required>
+  <button class="btn btn-danger" id="liveToastBtn" type="button">Subscribe</button>
+</form>
+</div>
+  <!-- Navigation and Social Media Links -->
+  <div class="col-md-4 text-center mb-4 py-5">
+    <div class="row">
+      <!-- Navigation Links -->
+      <div class="col-6">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-muted">Home</a></li>
+          <li><a href="#" class="text-decoration-none text-muted">About Us</a></li>
+          <li><a href="#" class="text-decoration-none text-muted">Services</a></li>
+          <li><a href="#" class="text-decoration-none text-muted">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Social Media Links -->
+      <div class="col-6">
+        <h5>Follow Us</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-muted">Twitter</a></li>
+          <li><a href="#" class="text-decoration-none text-muted">LinkedIn</a></li>
+          <li><a href="#" class="text-decoration-none text-muted">Facebook</a></li>
+          <li><a href="#" class="text-decoration-none text-muted">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="../images/check.png" class="rounded me-2" alt="Checkmark" style="width: 20px;">
+      <strong class="me-auto">Yay!</strong>
+      <small>Now</small>
+      <button 
+        type="button" 
+        class="btn-close" 
+        data-bs-dismiss="toast" 
+        aria-label="Close">
+      </button>
+    </div>
+    <div class="toast-body">
+      Nice, you've subscribed!
+    </div>
+  </div>
+</div>
+</footer>
+<script>
+// Toast functionality
+document.getElementById("liveToastBtn").addEventListener("click", () => {
+  const emailInput = document.getElementById("emailInput");
+  if (emailInput.checkValidity()) {
+    const toast = new bootstrap.Toast(document.getElementById("liveToast"));
+    toast.show();
+    emailInput.value = ""; // Clear the input field after successful subscription
+  } else {
+    emailInput.reportValidity(); // Show validation message if the email field is invalid
+  }
+});
+</script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdrawal Platform</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="../../trade.ico" type="image/x-icon">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+    }
+
+    .withdrawal-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .withdrawal-header {
+      background: linear-gradient(135deg, #20c997, #DC143C);
+      padding: 1.5rem;
+      color: #fff;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .withdrawal-form {
+      padding: 1.5rem;
+    }
+
+    .form-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-section label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-section input,
+    .form-section select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-section input:focus,
+    .form-section select:focus {
+      border-color: #007bff;
+    }
+	.fixed-image {
+      position: fixed;
+      top: 520px; 
+      right: 50px; 
+      z-index: 1000;
+    }
+
+    .form-section.hidden {
+      display: none;
+    }
+
+    .btn-submit {
+      background-color: #008080;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #DC143C;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="withdrawal-container">
+    <div class="withdrawal-header">
+	<img src="../images/candle.png" style="max-width:10%;" class="rounded me-2" alt="...">
+	Withdrawal Platform</div>
+    <div class="withdrawal-form">
+      <!-- Withdrawal Method Section -->
+      <div class="form-section">
+        <label for="method">Select Withdrawal Method</label>
+        <select id="method">
+          <option value="" disabled selected>Choose a method</option>
+          <option value="cashapp">Cash App</option>
+          <option value="crypto">Crypto</option>
+          <option value="bank">Bank (ACH)</option>
+        </select>
+      </div>
+
+      <!-- Cash App Section -->
+      <div id="cashapp-section" class="form-section hidden">
+        <label for="cashapp-username">Cash App Username</label>
+        <input type="text" id="cashapp-username" placeholder="Enter your Cash App username">
+      </div>
+
+      <!-- Crypto Section -->
+      <div id="crypto-section" class="form-section hidden">
+        <label for="crypto-address">Crypto Wallet Address</label>
+        <input type="text" id="crypto-address" placeholder="Enter your wallet address">
+        <label for="crypto-type" class="mt-3">Crypto Type</label>
+        <select id="crypto-type">
+          <option value="" disabled selected>Select Crypto</option>
+          <option value="bitcoin">Bitcoin (BTC)</option>
+          <option value="ethereum">Ethereum (ETH)</option>
+          <option value="usdt">Tether (USDT)</option>
+        </select>
+      </div>
+
+      <!-- Bank (ACH) Section -->
+      <div id="bank-section" class="form-section hidden">
+        <label for="bank-name">Bank Name</label>
+        <input type="text" id="bank-name" placeholder="Enter your bank name">
+        <label for="account-number" class="mt-3">Account Number</label>
+        <input type="text" id="account-number" placeholder="Enter your account number">
+        <label for="routing-number" class="mt-3">Routing Number</label>
+        <input type="text" id="routing-number" placeholder="Enter your routing number">
+      </div>
+
+      <!-- Submit Button -->
+      <button class="btn-submit" id="submit-btn">Submit Withdrawal</button>
+      <div class="note">* Ensure all details are accurate before submitting.</div>
+    </div>
+  </div>
+  <a href="../support-chat/public/index.html">
+  <div class="fixed-image">
+  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="#ea1515" d="M11.75 19h-.25q-3.55 0-6.025-2.475T3 10.5t2.475-6.025T11.5 2q1.775 0 3.313.662t2.7 1.825t1.824 2.7T20 10.5q0 3.35-1.888 6.225t-4.762 4.5q-.25.125-.5.138t-.45-.113t-.35-.325t-.175-.475zm-.275-3.025q.425 0 .725-.3t.3-.725t-.3-.725t-.725-.3t-.725.3t-.3.725t.3.725t.725.3M9.3 8.375q.275.125.55.013t.45-.363q.225-.3.525-.463T11.5 7.4q.6 0 .975.337t.375.863q0 .325-.187.65t-.663.8q-.625.55-.925 1.038t-.3.987q0 .3.213.513t.512.212t.5-.225t.3-.525q.125-.425.45-.775t.6-.625q.525-.525.788-1.05t.262-1.05q0-1.15-.788-1.85T11.5 6q-.8 0-1.475.388t-1.1 1.062q-.15.275-.038.538t.413.387"/></svg>
+  </a>
+  </div>
+  
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // JavaScript for Dynamic Form Behavior
+    const methodSelect = document.getElementById('method');
+    const cashappSection = document.getElementById('cashapp-section');
+    const cryptoSection = document.getElementById('crypto-section');
+    const bankSection = document.getElementById('bank-section');
+
+    methodSelect.addEventListener('change', () => {
+      // Hide all sections initially
+      cashappSection.classList.add('hidden');
+      cryptoSection.classList.add('hidden');
+      bankSection.classList.add('hidden');
+
+      // Show the selected section
+      const selectedMethod = methodSelect.value;
+      if (selectedMethod === 'cashapp') {
+        cashappSection.classList.remove('hidden');
+      } else if (selectedMethod === 'crypto') {
+        cryptoSection.classList.remove('hidden');
+      } else if (selectedMethod === 'bank') {
+        bankSection.classList.remove('hidden');
+      }
+    });
+
+    const submitButton = document.getElementById('submit-btn');
+    submitButton.addEventListener('click', () => {
+      const method = methodSelect.value;
+
+      if (!method) {
+        alert('Please select a withdrawal method.');
+        return;
+      }
+
+      let details = '';
+      if (method === 'cashapp') {
+        const username = document.getElementById('cashapp-username').value;
+        if (!username) {
+          alert('Please enter your Cash App username.');
+          return;
+        }
+        details = `Cash App Username: ${username}`;
+      } else if (method === 'crypto') {
+        const address = document.getElementById('crypto-address').value;
+        const type = document.getElementById('crypto-type').value;
+        if (!address || !type) {
+          alert('Please fill in all crypto details.');
+          return;
+        }
+        details = `Crypto Address: ${address}, Type: ${type}`;
+      } else if (method === 'bank') {
+        const bankName = document.getElementById('bank-name').value;
+        const accountNumber = document.getElementById('account-number').value;
+        const routingNumber = document.getElementById('routing-number').value;
+        if (!bankName || !accountNumber || !routingNumber) {
+          alert('Please fill in all bank details.');
+          return;
+        }
+        details = `Bank Name: ${bankName}, Account Number: ${accountNumber}, Routing Number: ${routingNumber}`;
+      }
+
+      alert(`Withdrawal Submitted Successfully! \n${details}`);
+    });
+  </script>
+</body>
+</html>

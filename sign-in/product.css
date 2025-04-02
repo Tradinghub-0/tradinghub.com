@@ -1,0 +1,58 @@
+.container {
+  max-width: 960px;
+}
+
+/*
+ * Custom translucent site header
+ */
+
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #DCDCDC;
+  transition: color .15s ease-in-out;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ * Dummy devices (replace them with your own or something else entirely!)
+ */
+
+
+
+
+.glisten-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* White text color */
+    background: linear-gradient(90deg, rgba(0, 255, 0, 1), rgba(255, 0, 0, 1)); /* Fully visible light green to red */
+    background-size: 200%; /* Increases the visible movement */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text;
+    animation: glisten 3s linear infinite;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7), 0 0 25px rgba(255, 0, 0, 0.7); /* More intense glow effect */
+}
+
+@keyframes glisten {
+    0% { background-position: -100% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    flex: 1;
+  }
+}

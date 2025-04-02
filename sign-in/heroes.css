@@ -1,0 +1,72 @@
+
+body {
+    background-image: url('../images/traxer.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0; /* Removes default body margin */
+    padding: 0%; /* Optional: Adjust or reset padding */
+    /* Makes sure body takes full viewport height */
+	max-width:100%;
+
+    /* Enhancements */
+    image-rendering: auto; /* Ensures smooth rendering */
+    filter: contrast(1.1) brightness(1.05); /* Adjust contrast and brightness */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add smooth effects */
+
+}
+
+
+
+
+
+.col-lg-7 {
+    background: linear-gradient(90deg, rgba(200, 45, 45, 0.9), rgba(255, 60, 0, 0.95)); /* More reddish transparent gradient */
+    color: white;
+    padding: 20px;
+    width: 500px;
+    border-radius: 20px;
+    float: left;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds depth with a shadow */
+    border: 2px solid rgba(255, 99, 71, 0.7); /* Slightly brighter stylish border */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
+    position: relative; /* Enables pseudo-elements for glisten effect */
+}
+
+.col-lg-7:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.col-lg-7::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 23px; /* Matches the container border-radius */
+    background: linear-gradient(90deg, rgba(255, 140, 0, 0.4), rgba(255, 99, 71, 0.3)); /* Enhanced glisten effect */
+    z-index: -1;
+    animation: glisten-effect 3s infinite ease-in-out;
+}
+
+@keyframes glisten-effect {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.col-md-10 {
+float: right;
+}
+   .custom
+   {  border: 2px solid rgba(0, 0, 0, 0.35); /* Slightly brighter stylish border */
+        border-radius: 20px;}

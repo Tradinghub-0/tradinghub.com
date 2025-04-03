@@ -21,7 +21,7 @@ body {
 
 
 .col-lg-7 {
-    background: linear-gradient(90deg, rgba(200, 45, 45, 0.9), rgba(255, 60, 0, 0.95)); /* More reddish transparent gradient */
+     background: linear-gradient(90deg, rgba(10, 15, 50, 0.95), rgba(5, 10, 30, 0.98)); /* More reddish transparent gradient */
     color: white;
     padding: 20px;
     width: 500px;

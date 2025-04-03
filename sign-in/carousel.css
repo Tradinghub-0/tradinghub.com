@@ -471,10 +471,6 @@ color: #fff;	/* Add shadow for depth */}
     
     display: none; /* Optionally keep hidden for a minimalistic look */
 }}
-.carousel-control-prev-icon, 
-.carousel-control-next-icon {
-    filter: invert(1); /* Makes arrows white */
-}
 
 
   

@@ -213,7 +213,7 @@ menu {
 }
  .fixed-image {
       position: fixed;
-      top: 85%; 
+      top: 90%; 
       right: 40px; 
       z-index: 1000;
     }

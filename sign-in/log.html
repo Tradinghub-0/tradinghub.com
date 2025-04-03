@@ -37,35 +37,50 @@
           </div>
 		 
           <div class="col-md-10 mx-auto col-lg-6">
-            <div class="custom" class="shadow-lg p-3 mb-5 bg-body rounded">
-              <form id="signInForm"  class="p-4 p-md-5 border rounded-3 bg-light needs-validation" novalidate>
-                <img class="mb-4" src="../images/candle.png" class="img-thumbnail" alt="..." width="100" height="auto">
-                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
-                  <label for="emailInput">Email address</label>
-                  <div class="invalid-feedback">Valid email address is required.</div>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="passwordInput" placeholder="Password" required minlength="8">
-                  <label for="passwordInput">Password</label>
-                  <div class="invalid-feedback">Valid password (at least 8 characters) is required.</div>
-                </div>
-                <div class="checkbox mb-3">
-                  <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                  </label>
-                  <br><br>
-                  <label>Don't have an account?
-				  <br><br>
-                    <a href="signup.html" class="w-100 btn btn-outline-warning">Sign up!</a>
-                  </label>
-                </div>
-                <button id="signInButton" class="w-100 btn btn-danger" type="submit" disabled>Sign in</button>
-             <br><br>
+  <div class="custom shadow-lg p-3 mb-5">
+    <form id="signInForm" class="p-4 p-md-5 border rounded-3 bg-dark text-light needs-validation" novalidate>
+      <img class="mb-4" src="../images/candle.png" class="img-thumbnail" alt="..." width="100" height="auto">
+      <h1 class="h3 mb-3 fw-bold text-white">Please sign in</h1>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control bg-secondary text-white" id="emailInput" placeholder="name@example.com" required>
+        <label for="emailInput" class="text-light">Email address</label>
+        <div class="invalid-feedback">Valid email address is required.</div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control bg-secondary text-white" id="passwordInput" placeholder="Password" required minlength="8">
+        <label for="passwordInput" class="text-light">Password</label>
+        <div class="invalid-feedback">Valid password (at least 8 characters) is required.</div>
+      </div>
+      <div class="checkbox mb-3">
+        <label class="text-light">
+          <input type="checkbox" value="remember-me" class="form-check-input"> Remember me
+        </label>
+        <br><br>
+        <label class="text-light fw-bold">Don't have an account?
+          <br>
+        <div class="d-flex justify-content-center mt-3">
+  <a href="signup.html" class="btn btn-warning btn-sm text-dark text-decoration-none py-2 px-4 rounded-pill shadow-sm fw-bold transition-all">
+    Sign up!
+  </a>
+</div>
+
+<button id="signInButton" class="w-100 btn btn-danger btn-sm text-white rounded-pill shadow-sm py-2 fw-bold mt-3 transition-all" type="submit" disabled>
+  Sign in
+</button>
+
+      <br><br>
+    </form>
+  </div>
+</div>
+
 			 
-              <small class="text-muted">By clicking Sign in, you agree to the terms of use.</small>
-              <p class="mt-5 mb-3 text-muted">&copy; 2024 Trading Hub, Inc. All rights reserved.</p> </form>
+              <div class="footer bg-dark text-light py-4 mt-5">
+  <div class="container text-center">
+    <small class="d-block text-white mb-2">By clicking Sign in, you agree to the <a href="#" class="text-warning text-decoration-none">terms of use</a>.</small>
+    <p class="mb-0">&copy; 2024 <strong>Trading Hub, Inc.</strong> All rights reserved.</p>
+  </div>
+</div>
+
             </div>
           </div>
         </div>

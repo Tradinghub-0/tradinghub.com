@@ -286,12 +286,12 @@ height: 350px}
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
   
- <div class="carousel-inner">
+<div class="carousel-inner">
   <div class="carousel-item active" data-bs-interval="3000">
     <picture>
-      <source srcset="../images/tr.png" media="(max-width: 768px)">
-      <source srcset="../images/tr.png" media="(min-width: 769px)">
-      <img src="../images/tr.png" class="enhanced-image d-block w-100" alt="Expand Your Horizon">
+      <source data-srcset="../images/tr.png" media="(max-width: 768px)">
+      <source data-srcset="../images/tr.png" media="(min-width: 769px)">
+      <img data-src="../images/tr.png" class="lazy-img enhanced-image d-block w-100" alt="Expand Your Horizon">
     </picture>
     <div class="carousel-caption d-block">
       <h1>Expand Your Horizon</h1>
@@ -299,24 +299,26 @@ height: 350px}
     </div>
   </div>
   
-<div class="carousel-item" data-bs-interval="3000">
- <picture>
-      <source srcset="../images/stock.jpg" media="(max-width: 768px)">
-      <source srcset="../images/stock.jpg" media="(min-width: 769px)">
-      <img src="../images/stock.jpg" class="enhanced-image d-block w-100" alt="Discover new things">
+  <div class="carousel-item" data-bs-interval="3000">
+    <picture>
+      <source data-srcset="../images/stock.jpg" media="(max-width: 768px)">
+      <source data-srcset="../images/stock.jpg" media="(min-width: 769px)">
+      <img data-src="../images/stock.jpg" class="lazy-img enhanced-image d-block w-100" alt="Discover new things">
     </picture>
-  <div class="carousel-caption d-block">
-    <h1>Discover New Markets</h1>
-    <p>Register your account and begin your journey with us!</p>
+    <div class="carousel-caption d-block">
+      <h1>Discover New Markets</h1>
+      <p>Register your account and begin your journey with us!</p>
+    </div>
   </div>
 </div>
+
 
   
   <div class="carousel-item" data-bs-interval="3000">
     <picture>
       <source srcset="../images/crypto.png" media="(max-width: 768px)">
       <source srcset="../images/crypto.png" media="(min-width: 769px)">
-      <img src="../images/crypto.png" class="enhanced-image d-block w-100" alt="Trade with various currencies">
+      <img src="../images/crypto.png" class="lazy-img enhanced-image d-block w-100" alt="Trade with various currencies">
     </picture>
     <div class="carousel-caption d-block">
       <h1>Trade with various currencies</h1>
@@ -324,7 +326,6 @@ height: 350px}
     </div>
   </div>
 </div>
-
 
 
 
@@ -941,7 +942,47 @@ height: 350px}
     // Or you could use toast.remove(); to completely remove the toast from the DOM
   }
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const lazyImages = document.querySelectorAll('img.lazy-img');
+    const lazySources = document.querySelectorAll('source[data-srcset]');
 
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+
+            // For <img>
+            if (img.tagName === "IMG" && img.dataset.src) {
+              img.src = img.dataset.src;
+              img.classList.remove("lazy-img");
+              observer.unobserve(img);
+            }
+
+            // For <source> inside <picture>
+            if (img.tagName === "SOURCE" && img.dataset.srcset) {
+              img.srcset = img.dataset.srcset;
+              observer.unobserve(img);
+            }
+          }
+        });
+      });
+
+      lazyImages.forEach(img => observer.observe(img));
+      lazySources.forEach(source => observer.observe(source));
+
+    } else {
+      // Fallback: just load all images
+      lazyImages.forEach(img => {
+        img.src = img.dataset.src;
+      });
+      lazySources.forEach(source => {
+        source.srcset = source.dataset.srcset;
+      });
+    }
+  });
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

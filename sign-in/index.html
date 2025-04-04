@@ -54,7 +54,7 @@
       z-index: 1000;
     }
 .enhanced-image {
-background-image:url('../images/back.webp');
+background-image:url('../images/back.png');
 background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -69,7 +69,9 @@ background-size: cover; /* Ensures the image covers the entire background */
     filter: contrast(1.1) brightness(1.05); /* Adjust contrast and brightness */
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
   }
-
+.webp .enhanced-image {
+  background-image: url('../images/back.webp');
+}
 
   .enhanced-image:hover {
     transform: scale(1.03); /* Subtle zoom effect */
@@ -176,17 +178,25 @@ background-size: cover; /* Ensures the image covers the entire background */
   </div>
 
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">
-		<a class="text-danger" href="log.html">Refer & Earn</h2></a>
-        <p class="lead">Multipy your profits in seconds.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 400px; height: 450px; border-radius: 21px 21px 10px 10px; position: relative;"><a href="earn.html">
-	  <img src="../images/reward.webp" class="enhanced-image" class="rounded float-start" class="img-thumbnail" alt="Refer & Earn" style="width:400px; height:400px; margin-bottom:20px; "> 
-	  </div>
-    </div></a>
-	
+  <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">
+        <a class="text-danger" href="log.html">Refer & Earn</a>
+      </h2>
+      <p class="lead">Multiply your profits in seconds.</p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto" style="width: 400px; height: 450px; border-radius: 21px 21px 10px 10px; position: relative;">
+      <a href="earn.html">
+        <picture>
+          <source srcset="../images/reward.webp" type="image/webp">
+          <source srcset="../images/reward.png" type="image/png">
+          <img src="../images/reward.png" alt="Refer & Earn" class="enhanced-image img-thumbnail" style="width:400px; height:400px; margin-bottom:20px;">
+        </picture>
+      </a>
+    </div>
+  </div>
+</div>
+
     <div class="text-bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
 	  <div class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -343,6 +353,22 @@ document.getElementById("liveToastBtn").addEventListener("click", () => {
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
+    <script>
+  (function () {
+    var img = new Image();
+    img.onload = function () {
+      if (img.width > 0 && img.height > 0) {
+        document.documentElement.classList.add('webp');
+      } else {
+        document.documentElement.classList.add('no-webp');
+      }
+    };
+    img.onerror = function () {
+      document.documentElement.classList.add('no-webp');
+    };
+    img.src = "data:image/webp;base64,UklGRiIAAABXRUJQVlA4TAYAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
+  })();
+</script>
+  
   </body>
 </html>

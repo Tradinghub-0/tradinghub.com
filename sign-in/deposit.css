@@ -73,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #ff4d4d;
+    color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
     background-color: #1a1a1a;
@@ -204,7 +204,7 @@ body {
 menu {
     
     background-color: #f8f9fa;
-    padding: 1px;
+    padding: 0px;
 	
     border-radius: 15px;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);

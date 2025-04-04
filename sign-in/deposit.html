@@ -33,10 +33,13 @@
         <div class="d-flex align-items-center">
             <li class="breadcrumb-item h5 mb-0">
                
-                    <a href="earn.html" class="text-danger text-decoration-none">Refer & Earn</a>
-                
-            </li>
-            <li class="breadcrumb-item active h5 mb-0" aria-current="page">Broker</li>
+                      <a href="earn.html" class="me-3 text-dark text-decoration-none d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+            </svg>
+            <span class="ms-2 fw-semibold"></span>
+        </a>
         </div>
         <!-- Sidebar Menu Trigger -->
     <div id="menu-toggle" class="menu-dots" onclick="toggleSidebar()">
@@ -49,7 +52,15 @@
 </menu>
 <!-- Sidebar Menu -->
 <div id="sidebar-menu" class="sidebar-menu">
-<button class="close-btn" onclick="toggleSidebar()">✖</button>
+ <button class="close-btn" onclick="toggleSidebar()" aria-label="Close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+         viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
    
  <ul class="menu-options list-unstyled m-0 p-4">
     <li><a href="#" onclick="toggleDarkMode()"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21.64 13.62a1 1 0 0 0-1.15-.37A9.23 9.23 0 0 1 12 21 9.34 9.34 0 0 1 4.74 9.9 1 1 0 0 0 4.37 8.77 9.23 9.23 0 0 1 12 3a1 1 0 0 0 .64-1.82A11.21 11.21 0 1 0 22 13a1 1 0 0 0-.36.62z"/></svg> Dark Mode</a></li>

@@ -19,17 +19,27 @@
     </div>
   </header>
 
-  <div class="container-fluid p-0 bg-light">
- <menu style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-  <ol class="breadcrumb p-3 bg-light rounded shadow-sm">
-    <li class="breadcrumb-item h5">
-      
-        <a href="earn.html" class="text-danger text-decoration-none">Refer & Earn</a>
-      
-    </li>
-    <li class="breadcrumb-item active h5" aria-current="page">Broker</li>
-  </ol>
-</menu>
+ <div class="container-fluid p-0 bg-white border-bottom shadow-sm">
+    <nav class="p-3 d-flex align-items-center">
+        <!-- Back Button -->
+        <a href="earn.html" class="me-3 text-dark text-decoration-none d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+            </svg>
+            <span class="ms-2 fw-semibold"></span>
+        </a>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="ms-auto">
+            <ol class="breadcrumb mb-0 bg-transparent">
+                <li class="breadcrumb-item">
+                    <a href="earn.html" class="text-dark text-decoration-none fw-semibold">Refer & Earn</a>
+                </li>
+                <li class="breadcrumb-item active fw-bold text-danger" aria-current="page">Broker</li>
+            </ol>
+        </div>
+    </nav>
 </div>
 
   <section class="search-section text-center py-3">
@@ -55,7 +65,7 @@
     </div>
   </section>
 
-  <section class="chart-section py-4">
+  <section class="chart-section py-2">
     <div class="container text-center">
       <h2>Price Trend of Selected Crypto</h2>
       <canvas id="price-chart"></canvas>
@@ -64,10 +74,20 @@
 
   <section class="pagination-section text-center py-3">
     <div class="container">
-      <div class="btn-group" role="group">
-        <button id="prev-btn" class="btn btn-danger" onclick="loadPage(currentPage - 1)">Previous</button>
-        <button id="next-btn" class="btn btn-outline-success" onclick="loadPage(currentPage + 1)">Next</button>
-      </div>
+      <div class="d-flex justify-content-center gap-3 my-3">
+    <button id="prev-btn" class="btn px-4 py-2 fw-bold text-white rounded-pill shadow-sm" 
+            style="background: linear-gradient(135deg, #ff4b5c, #d7263d); border: none; transition: 0.3s;"
+            onclick="loadPage(currentPage - 1)">
+         Previous
+    </button>
+
+    <button id="next-btn" class="btn px-4 py-2 fw-bold text-white rounded-pill shadow-sm" 
+            style="background: linear-gradient(135deg, #006a58, #34c4b6); border: none; transition: 0.3s;"
+            onclick="loadPage(currentPage + 1)">
+        Next 
+    </button>
+</div>
+
 	  <div class="fixed-image">
       <a href="../support-chat/public/index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="#ea1515" d="M11.75 19h-.25q-3.55 0-6.025-2.475T3 10.5t2.475-6.025T11.5 2q1.775 0 3.313.662t2.7 1.825t1.824 2.7T20 10.5q0 3.35-1.888 6.225t-4.762 4.5q-.25.125-.5.138t-.45-.113t-.35-.325t-.175-.475zm-.275-3.025q.425 0 .725-.3t.3-.725t-.3-.725t-.725-.3t-.725.3t-.3.725t.3.725t.725.3M9.3 8.375q.275.125.55.013t.45-.363q.225-.3.525-.463T11.5 7.4q.6 0 .975.337t.375.863q0 .325-.187.65t-.663.8q-.625.55-.925 1.038t-.3.987q0 .3.213.513t.512.212t.5-.225t.3-.525q.125-.425.45-.775t.6-.625q.525-.525.788-1.05t.262-1.05q0-1.15-.788-1.85T11.5 6q-.8 0-1.475.388t-1.1 1.062q-.15.275-.038.538t.413.387"/></svg>

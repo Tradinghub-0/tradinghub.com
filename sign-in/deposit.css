@@ -7,7 +7,7 @@ body, h1, h2, p, ul, li, nav, header, footer {
 
 /* Body */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  
   background: linear-gradient(#135deg, #f8f9fc, #adb5bd);
   color: #333;
   line-height: 1.6;
@@ -17,10 +17,7 @@ body {
       min-height: 100vh;
 }
 
-/* Menu Header Styling */
-    .menu-header {
-        border-bottom: 2px solid #e6e6e6;
-    }
+
 
     /* Sidebar Menu */
     .sidebar-menu {
@@ -47,8 +44,11 @@ body {
     transition: color 0.3s ease;
 }
 
-.sidebar-menu .close-btn:hover {
-    color: #ff4d4d;
+.sidebar-menu :hover {
+    color: #fff;
+}
+.close-btn :hover {
+    color: #fff;
 }
 
 
@@ -139,7 +139,7 @@ body {
   }
 }
     .menu-dots:hover {
-        color: #ff4d4d; /* Bright red on hover */
+        color: #000; /* Bright red on hover */
         transform: scale(1.1); /* Slight zoom effect */
     }
 

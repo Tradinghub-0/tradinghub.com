@@ -969,6 +969,22 @@ height: 350px}
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="earn.js"></script>
 <script src="success.js"></script>
-      
+      <script>
+  (function () {
+    var img = new Image();
+    img.onload = function () {
+      if (img.width > 0 && img.height > 0) {
+        document.documentElement.classList.add('webp');
+      } else {
+        document.documentElement.classList.add('no-webp');
+      }
+    };
+    img.onerror = function () {
+      document.documentElement.classList.add('no-webp');
+    };
+    img.src = "data:image/webp;base64,UklGRiIAAABXRUJQVlA4TAYAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
+  })();
+</script>
+
   </body>
 </html>

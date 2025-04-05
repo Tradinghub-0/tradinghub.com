@@ -149,9 +149,15 @@ height: 350px}
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
-	  <!-- Preloader -->
+	<!-- Preloader -->
 <div id="preloader">
-  <div class="loader"></div>
+  <div class="candles">
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+  </div>
 </div>
 
   <header class="sticky-top py-0">
@@ -992,13 +998,22 @@ height: 350px}
 </script>
 <script>
   window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.style.transition = 'opacity 0.5s ease';
+
+    // Delay a bit to enjoy the animation
     setTimeout(() => {
-      const preloader = document.getElementById('preloader');
       preloader.style.opacity = '0';
       preloader.style.visibility = 'hidden';
-    }, 800); // Delay a bit to enjoy the animation
+
+      // Hide completely after fade-out
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500); // Matches the transition time
+    }, 800); // Initial delay
   });
 </script>
+
 
   </body>
 </html>

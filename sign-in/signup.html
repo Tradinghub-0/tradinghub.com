@@ -24,6 +24,17 @@
 	.progress-bar {
       transition: width 0.3s ease;
     }
+	  .hidden-tip {
+  font-size: 0.9rem;
+  color: #6c757d;
+  display: none;
+}
+
+input:focus + .hidden-tip,
+input:invalid + .hidden-tip {
+  display: block;
+}
+
   </style>
   <link href="form-validation.css" rel="stylesheet">
 </head>
@@ -140,10 +151,26 @@ Welcome to Trading Hub</button>
 
             <div class="container mt-4">
     <div class="col-12">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
-      <div class="invalid-feedback">Password must meet strength requirements.</div>
-    </div>
+     <div class="mb-3">
+  <label for="password" class="form-label">Password</label>
+  <input 
+    type="password" 
+    id="password" 
+    class="form-control" 
+    placeholder="Enter your password" 
+    required
+    
+  >
+  
+  <!-- Hidden tip shown when password is invalid -->
+  <div class="form-text text-muted hidden-tip">
+    Tip: Use a capital letter, number, lowercase letters, and a symbol like a full stop (.) to make a strong password.
+  </div>
+
+  <div class="invalid-feedback">
+    Password must meet strength requirements.
+  </div>
+</div>
 
     <div class="progress mt-3">
       <div class="progress-bar progress-bar-striped progress-bar-animated" 
@@ -155,17 +182,17 @@ Welcome to Trading Hub</button>
     </div>
   </div>
 
-            <div class="col-12">
+            <div class="col-12 py-2">
               <label for="confirmPassword" class="form-label">Confirm Password</label>
               <input type="password" id="confirmPassword" class="form-control" placeholder="Retype your password" required>
               <div class="invalid-feedback">Passwords do not match.</div>
             </div>
-            <div class="col-12">
+            <div class="col-12 py-2">
               <label for="phone" class="form-label">Phone Number</label>
               <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
               <div class="invalid-feedback">Please enter a valid phone number.</div>
             </div>
-			 <div class="col-12">
+			 <div class="col-12 py-2">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
                     <label class="form-check-label" for="termsCheck">Agree to terms and conditions</label>

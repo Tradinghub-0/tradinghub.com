@@ -149,6 +149,11 @@ height: 350px}
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
+	  <!-- Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+
   <header class="sticky-top py-0">
   <div class="container">
     <!-- Header Wrapper -->
@@ -984,6 +989,15 @@ height: 350px}
     };
     img.src = "data:image/webp;base64,UklGRiIAAABXRUJQVlA4TAYAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
   })();
+</script>
+<script>
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.opacity = '0';
+      preloader.style.visibility = 'hidden';
+    }, 800); // Delay a bit to enjoy the animation
+  });
 </script>
 
   </body>

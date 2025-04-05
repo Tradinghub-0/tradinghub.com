@@ -62,36 +62,29 @@ body {
   gap: 10px;
 }
 
-/* Single candle style */
+/* Base candle style */
 .candle {
   width: 6px;
   height: 40px;
-  background: #0d6efd; /* Trading blue */
   border-radius: 3px;
-  animation: candleMove 1s ease-in-out infinite;
   opacity: 0.8;
 }
 
-/* Animate each candle slightly differently */
-.candle:nth-child(1) {
-  animation-delay: 0s;
-}
-.candle:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.candle:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.candle:nth-child(4) {
-  animation-delay: 0.6s;
-}
-.candle:nth-child(5) {
-  animation-delay: 0.8s;
+/* Bullish candles (green, go up) */
+.bullish {
+  background: #00ff77;
+  animation: bullishMove 1.2s ease-in-out infinite;
 }
 
-/* Candle up-down and fade animation */
-@keyframes candleMove {
-  0% {
+/* Bearish candles (red, go down) */
+.bearish {
+  background: #ff3b3b;
+  animation: bearishMove 1.2s ease-in-out infinite;
+}
+
+/* Bullish animation (upward scale) */
+@keyframes bullishMove {
+  0%, 100% {
     transform: scaleY(1);
     opacity: 0.6;
   }
@@ -99,11 +92,27 @@ body {
     transform: scaleY(1.8);
     opacity: 1;
   }
-  100% {
-    transform: scaleY(1);
+}
+
+/* Bearish animation (downward scale) */
+@keyframes bearishMove {
+  0%, 100% {
+    transform: scaleY(1.2);
     opacity: 0.6;
   }
+  50% {
+    transform: scaleY(0.5);
+    opacity: 1;
+  }
 }
+
+/* Stagger animation for realism */
+.candle:nth-child(1) { animation-delay: 0s; }
+.candle:nth-child(2) { animation-delay: 0.2s; }
+.candle:nth-child(3) { animation-delay: 0.4s; }
+.candle:nth-child(4) { animation-delay: 0.6s; }
+.candle:nth-child(5) { animation-delay: 0.8s; }
+
 
 /* Icon Wrapper */
 .trading-hub-icon {
@@ -646,6 +655,7 @@ padding-left: 1rem;}
   text-align: center;
   padding: 50px 20px;
   background: white;
+  height: 48rem;
 }
 
 .hero h1 {

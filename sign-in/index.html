@@ -146,7 +146,17 @@ background-size: cover; /* Ensures the image covers the entire background */
     <link href="product.css" rel="stylesheet">
   </head>
   <body>
-    
+    <!-- Preloader -->
+<div id="preloader">
+  <div class="candles">
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+    <div class="candle"></div>
+  </div>
+</div>
+
 <header class="site-header sticky-top py-1">
   <nav class="container d-flex flex-column flex-md-row justify-content-between">
     <a class="py-2" href="#" aria-label="Product">
@@ -177,26 +187,18 @@ background-size: cover; /* Ensures the image covers the entire background */
   </div>
   </div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-  <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">
-        <a class="text-danger" href="log.html">Refer & Earn</a>
-      </h2>
-      <p class="lead">Multiply your profits in seconds.</p>
-    </div>
-    <div class="bg-dark shadow-sm mx-auto" style="width: 400px; height: 450px; border-radius: 21px 21px 10px 10px; position: relative;">
-      <a href="earn.html">
-        <picture>
-          <source srcset="../images/reward.webp" type="image/webp">
-          <source srcset="../images/reward.png" type="image/png">
-          <img src="../images/reward.png" alt="Refer & Earn" class="enhanced-image img-thumbnail" style="width:400px; height:400px; margin-bottom:20px;">
-        </picture>
-      </a>
-    </div>
-  </div>
-</div>
-
+ <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5">
+		<a class="text-danger" href="log.html">Refer & Earn</h2></a>
+        <p class="lead">Multipy your profits in seconds.</p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 400px; height: 450px; border-radius: 21px 21px 10px 10px; position: relative;"><a href="earn.html">
+	  <img src="../images/reward.png" class="enhanced-image" class="rounded float-start" class="img-thumbnail" alt="Refer & Earn" style="width:400px; height:400px; margin-bottom:20px; "> 
+	  </div>
+    </div></a>
+	
     <div class="text-bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
 	  <div class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -369,6 +371,16 @@ document.getElementById("liveToastBtn").addEventListener("click", () => {
     img.src = "data:image/webp;base64,UklGRiIAAABXRUJQVlA4TAYAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
   })();
 </script>
-  
+  <script>
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.style.transition = 'opacity 0.5s ease';
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  });
+</script>
+
   </body>
 </html>

@@ -725,7 +725,7 @@ padding-left: 1rem;}
   margin-bottom: 100px;
   padding: 10px;
   border-radius: 50%;
-  background: linear-gradient(90deg, #DC143C, #FFB6C1);
+  background: linear-gradient(90deg, #b00020, #ff4d4d);
   color: white;
   font-size: 18px;  /* Adjusted for better icon display */
   width: 45px;  /* Size of the circle */
@@ -733,8 +733,12 @@ padding-left: 1rem;}
   line-height: 50px; /* Center the icon */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+	 margin-right: 75px;
 }
-
+@media (max-width: 768px) {  /* For tablets and smaller screens */
+  .back-to-top {
+	  margin-right: 0px;
+  }}
 .back-to-top svg {
   display: block;
   margin: 0 auto;
@@ -742,7 +746,7 @@ padding-left: 1rem;}
 
 .back-to-top:hover {
   transform: translateY(-3px);
-  background: linear-gradient(90deg, #DC143C, #FFB6C1);
+  background: linear-gradient(90deg, #b00020, #ff4d4d);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }

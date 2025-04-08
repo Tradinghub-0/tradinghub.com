@@ -12,19 +12,14 @@
   
 </head>
 	<style>
-		.btn-danger {
+		.btn-danger { background-color: #f76c6c;
     border-color: #f76c6c;
-    color: #f76c6c;
+    color: #fff;
     padding: 0.6em 1.2em;
     border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 	
-  }
-
-  .btn-danger:hover {
-    background-color: #f76c6c;
-    color: white;
   }
 		</style>
 <body>
@@ -135,23 +130,19 @@
       alt="QR Code" 
       class="qr-code mb-3"
     >
-
-   
-    <p class="text-muted">Scan the QR code or copy link to deposit funds</p>
-
-    <!-- 📋 Referral/Deposit Link Input + Copy Button -->
+ <!-- 📋 Referral/Deposit Link Input + Copy Button -->
     <div class="input-group mt-3">
       <input 
         type="text" 
         class="form-control" 
-        id="referralLink" 
+        id="depositlLink" 
         readonly 
         value="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
       >
       <button class="btn btn-danger" id="copyBtn">Copy</button>
     </div>
-  </div>
-</div>
+ <p class="text-muted">Use QR or link to deposit funds</p>
+
  <!-- Deposit Link -->
     <a 
       id="depositLink" 
@@ -161,7 +152,8 @@
       class="btn btn-danger mb-2"
     >
       Deposit Now
-    </a>
+    </a> </div>
+</div>
     </section>
 
     <!-- Stocks Section -->

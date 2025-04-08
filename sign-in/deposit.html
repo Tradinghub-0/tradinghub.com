@@ -12,7 +12,7 @@
   
 </head>
 	<style>
-		.btn-danger { background-color: #f76c6c;
+		.btn-danger {
     border-color: #f76c6c;
     color: #fff;
     padding: 0.6em 1.2em;
@@ -83,78 +83,78 @@
       </div>
     </header>
 
-    <section id="deposit" class="section">
-      <h2>Fund Your Account</h2>
-      <div class="deposit-container">
-        <!-- Wallet Selector -->
-        <div class="wallet-selection">
-    <div class="wallet-container">
+   <section id="deposit" class="section">
+  <h2>Fund Your Account</h2>
+  <div class="deposit-container">
+    
+    <!-- Wallet Selector -->
+    <div class="wallet-selection">
+      <div class="wallet-container">
         <label for="currency">Select Wallet:</label>
         <select id="currency" onchange="updateQRCode()">
-            <option value="eth" data-address="0x6416C13465D6117692B22fa40c2D0fdF7C2657fd" data-asset="c60">Ethereum (ETH)</option>
-            <option value="btc" data-address="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" data-asset="btc">Bitcoin (BTC)</option>
-            <option value="usdt" data-address="0x6416C13465D6117692B22fa40c2D0fdF7C2657fd" data-asset="usdt">Tether (USDT)</option>
+          <option value="eth" data-address="0x6416C13465D6117692B22fa40c2D0fdF7C2657fd" data-asset="c60">Ethereum (ETH)</option>
+          <option value="btc" data-address="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" data-asset="btc">Bitcoin (BTC)</option>
+          <option value="usdt" data-address="0x6416C13465D6117692B22fa40c2D0fdF7C2657fd" data-asset="usdt">Tether (USDT)</option>
         </select>
+      </div>
     </div>
-</div>
 
-<!-- Amount Inputs -->
-<div class="amount-inputs">
-    <label for="dollars">Amount in USD ($):</label>
-    <input type="number" id="dollars" placeholder="Enter amount (min $100)" min="100" onchange="convertToCrypto()">
-    <div id="dollar-feedback" class="feedback-text"></div>
+    <!-- Amount Inputs -->
+    <div class="amount-inputs">
+      <label for="dollars">Amount in USD ($):</label>
+      <input type="number" id="dollars" placeholder="Enter amount (min $100)" min="100" onchange="convertToCrypto()">
+      <div id="dollar-feedback" class="feedback-text"></div>
 
-    <label for="crypto">Amount in Cryptocurrency:</label>
-    <input type="text" id="crypto" placeholder="Crypto amount" disabled>
-</div>
-
-		<div class="form-feedback">
-        <p id="conversion-feedback"></p>
+      <label for="crypto">Amount in Cryptocurrency:</label>
+      <input type="text" id="crypto" placeholder="Crypto amount" disabled>
     </div>
-<div>
-       
 
-    
-
-       
-
-      <!-- QR Code Display -->
-<div class="qr-container" id="qr-code">
-  <div class="card p-4 text-center">
-    <h2>Deposit Funds</h2>
-
-    <!-- QR Image -->
-    <img 
-      id="qrImage" 
-      src="https://api.qrserver.com/v1/create-qr-code/?data=https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263&size=150x150" 
-      alt="QR Code" 
-      class="qr-code mb-3"
-    >
- <!-- 📋 Referral/Deposit Link Input + Copy Button -->
-    <div class="input-group mt-3">
-      <input 
-        type="text" 
-        class="form-control" 
-        id="depositlLink" 
-        readonly 
-        value="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
-      >
-      <button class="btn btn-danger" id="copyBtn">Copy</button>
+    <div class="form-feedback">
+      <p id="conversion-feedback"></p>
     </div>
- <p class="text-muted">Use QR or link to deposit funds</p>
 
- <!-- Deposit Link -->
-    <a 
-      id="depositLink" 
-      href="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
-      title="Make a deposit" 
-      target="_blank"
-      class="btn btn-danger mb-2"
-    >
-      Deposit Now
-    </a> </div>
-</div>
-    </section>
+    <!-- QR Code + Deposit Link -->
+    <div class="qr-container" id="qr-code">
+      <div class="card p-4 text-center">
+        <h2>Deposit Funds</h2>
+
+        <!-- QR Image -->
+        <img 
+          id="qrImage" 
+          src="https://api.qrserver.com/v1/create-qr-code/?data=https://link.trustwallet.com/send?asset=c60&address=0x6416C13465D6117692B22fa40c2D0fdF7C2657fd&size=150x150" 
+          alt="QR Code" 
+          class="qr-code mb-3"
+        >
+
+        <!-- Copyable Link -->
+        <div class="input-group mt-3">
+          <input 
+            type="text" 
+            class="form-control" 
+            id="depositLinkInput" 
+            readonly 
+            value="https://link.trustwallet.com/send?asset=c60&address=0x6416C13465D6117692B22fa40c2D0fdF7C2657fd"
+          >
+          <button class="btn custom-btn-danger" id="copyBtn">Copy</button>
+        </div>
+
+        <p class="text-muted">Scan QR or copy link to deposit</p>
+
+        <!-- Button to Open Deposit Link -->
+        <a 
+          id="depositLink" 
+          href="https://link.trustwallet.com/send?asset=c60&address=0x6416C13465D6117692B22fa40c2D0fdF7C2657fd"
+          title="Make a deposit" 
+          target="_blank"
+          class="btn custom-btn-danger mb-2"
+        >
+          Deposit Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Stocks Section -->
     <section id="stocks" class="section">
@@ -201,5 +201,53 @@
     <script src="deposit.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   </main>
+	<script>
+  function updateQRCode() {
+    const select = document.getElementById("currency");
+    const selected = select.options[select.selectedIndex];
+    const address = selected.getAttribute("data-address");
+    const asset = selected.getAttribute("data-asset");
+
+    const link = `https://link.trustwallet.com/send?asset=${asset}&address=${address}`;
+    const qrURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(link)}&size=150x150`;
+
+    // Update elements
+    document.getElementById("qrImage").src = qrURL;
+    document.getElementById("depositLinkInput").value = link;
+    document.getElementById("depositLink").href = link;
+  }
+
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    const input = document.getElementById("depositLinkInput");
+    input.select();
+    input.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(input.value);
+    alert("Deposit link copied to clipboard!");
+  });
+
+  function convertToCrypto() {
+    const amountUSD = parseFloat(document.getElementById("dollars").value);
+    const cryptoOutput = document.getElementById("crypto");
+    const feedback = document.getElementById("conversion-feedback");
+    const selected = document.getElementById("currency").value;
+
+    if (!amountUSD || amountUSD < 100) {
+      feedback.textContent = "Minimum deposit is $100";
+      cryptoOutput.value = "";
+      return;
+    }
+
+    // Mock conversion rates (can integrate API later)
+    const rates = { eth: 3500, btc: 65000, usdt: 1 };
+    const rate = rates[selected];
+    const cryptoAmount = (amountUSD / rate).toFixed(6);
+    cryptoOutput.value = cryptoAmount + " " + selected.toUpperCase();
+    feedback.textContent = `Approx. conversion at current rate`;
+  }
+
+  // Initialize on load
+  window.addEventListener("DOMContentLoaded", updateQRCode);
+</script>
+
 </body>
 </html>

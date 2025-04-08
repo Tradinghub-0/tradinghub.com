@@ -11,6 +11,22 @@
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   
 </head>
+	<style>
+		.btn-danger {
+    border-color: #f76c6c;
+    color: #f76c6c;
+    padding: 0.6em 1.2em;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+	
+  }
+
+  .btn-danger:hover {
+    background-color: #f76c6c;
+    color: white;
+  }
+		</style>
 <body>
 
   <header class="navbar">
@@ -107,22 +123,45 @@
 
        
 
-        <!-- QR Code Display -->
-        <div class="qr-container" id="qr-code">
-          <div class="card">
-            <h2>Deposit Funds</h2>
-            <img id="qrImage" 
-                 src="https://api.qrserver.com/v1/create-qr-code/?data=https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263&size=150x150" 
-                 alt="QR Code" 
-                 class="qr-code"><br>
-            <a id="depositLink" 
-               href="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
-               title="Make a deposit" 
-               target="_blank">Deposit Now</a>
-            <p>Scan the QR code to deposit funds</p>
-          </div>
-        </div>
-      </div>
+      <!-- QR Code Display -->
+<div class="qr-container" id="qr-code">
+  <div class="card p-4 text-center">
+    <h2>Deposit Funds</h2>
+
+    <!-- QR Image -->
+    <img 
+      id="qrImage" 
+      src="https://api.qrserver.com/v1/create-qr-code/?data=https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263&size=150x150" 
+      alt="QR Code" 
+      class="qr-code mb-3"
+    >
+
+   
+    <p class="text-muted">Scan the QR code or copy link to deposit funds</p>
+
+    <!-- 📋 Referral/Deposit Link Input + Copy Button -->
+    <div class="input-group mt-3">
+      <input 
+        type="text" 
+        class="form-control" 
+        id="referralLink" 
+        readonly 
+        value="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
+      >
+      <button class="btn btn-danger" id="copyBtn">Copy</button>
+    </div>
+  </div>
+</div>
+ <!-- Deposit Link -->
+    <a 
+      id="depositLink" 
+      href="https://link.trustwallet.com/send?asset=c60&address=0xCed462ce2929cfCD97beDE609c05c4829c90F263"
+      title="Make a deposit" 
+      target="_blank"
+      class="btn btn-danger mb-2"
+    >
+      Deposit Now
+    </a>
     </section>
 
     <!-- Stocks Section -->

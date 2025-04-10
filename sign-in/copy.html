@@ -17,6 +17,16 @@
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
      <style>
+	     #liveAlertPlaceholder {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      display: flex;
+      justify-content: center; 
+      pointer-events: none; 
+    }
      .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -115,37 +125,45 @@ body {
 
     <div class="card-body text-center">
       <h4 class="card-title mb-4"><strong>Bitcoin Wizard</strong></h4>
+ <div id="liveAlertPlaceholder"></div>
+
+   
+<div class="d-flex w-100 justify-content-center mb-3">
+  <button type="button" class="btn btn-success btn-sm copy-btn px-4 py-2" style="min-width: 200px;" data-message="Successfully Copied!">
+    Copy
+  </button>
+</div>
 
       <!-- Trade Stats with alternating colors -->
       <div class="container text-start">
-        <div class="row py-3" style="background-color: #1f2937; border-radius: 8px; margin-bottom: 10px;">
-          <div class="col">TRADES</div>
-          <div class="col text-end">306</div>
+        <div class="row w-100 mx-0 py-3" style="background-color: #1f2937; border-radius: 8px; margin-bottom: 10px;">
+          <div class="col-6">TRADES</div>
+          <div class="col-6 text-end">306</div>
         </div>
 
-        <div class="row py-3" style="background-color: #2d3748; border-radius: 8px; margin-bottom: 10px;">
-          <div class="col">TOTAL WINS</div>
-          <div class="col text-end">292</div>
+        <div class="row w-100 mx-0 py-3" style="background-color: #2d3748; border-radius: 8px; margin-bottom: 10px;">
+          <div class="col-6">TOTAL WINS</div>
+          <div class="col-6 text-end">292</div>
         </div>
 
-        <div class="row py-3" style="background-color: #1f2937; border-radius: 8px; margin-bottom: 10px;">
-          <div class="col">FOLLOWERS</div>
-          <div class="col text-end">546</div>
+        <div class="row w-100 mx-0 py-3" style="background-color: #1f2937; border-radius: 8px; margin-bottom: 10px;">
+          <div class="col-6">FOLLOWERS</div>
+          <div class="col-6 text-end">546</div>
         </div>
 
-        <div class="row py-3" style="background-color: #2d3748; border-radius: 8px; margin-bottom: 10px;">
-          <div class="col">TOTAL LOSSES</div>
-          <div class="col text-end">14</div>
+        <div class="row w-100 mx-0 py-3" style="background-color: #2d3748; border-radius: 8px; margin-bottom: 10px;">
+          <div class="col-6">TOTAL LOSSES</div>
+          <div class="col-6 text-end">14</div>
         </div>
 
-        <div class="row py-3" style="background-color: #1f2937; border-radius: 8px; margin-bottom: 10px;">
-          <div class="col">WIN PERCENT</div>
-          <div class="col text-end">95.42%</div>
+        <div class="row w-100 mx-0 py-3" style="background-color: #1f2937; border-radius: 8px; margin-bottom: 10px;">
+          <div class="col-6">WIN PERCENT</div>
+          <div class="col-6 text-end">95.42%</div>
         </div>
 
-        <div class="row py-3" style="background-color: #2d3748; border-radius: 8px; margin-bottom: 10px;">
-          <div class="col">PROFIT SHARE</div>
-          <div class="col text-end">20%</div>
+        <div class="row w-100 mx-0 py-3" style="background-color: #2d3748; border-radius: 8px; margin-bottom: 10px;">
+          <div class="col-6">PROFIT SHARE</div>
+          <div class="col-6 text-end">20%</div>
         </div>
       </div>
 <br>
@@ -165,6 +183,6 @@ body {
   </div>
 </div>
 
-    
+    <script src="success.js"></script> 
   </body>
 </html>

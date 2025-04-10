@@ -70,34 +70,5 @@ font-size: 0.5em;}}
   color: #fff;
   border-bottom-color: #fff;
 }
-.footer {
-  background: #1c1c1c;
-  color: #ccc;
-  border-top: 1px solid #333;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.4);
-  max-width: 500px;
-}
-
-.footer-title {
-  color: #ffffff;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-.footer-text {
-  font-size: 1rem;
-  color: #bbb;
-}
-
-.footer-link {
-  color: #00bcd4;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.footer-link:hover {
-  color: #ffffff;
-  text-shadow: 0 0 5px #00bcd4;
-}
 
 

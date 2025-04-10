@@ -22,13 +22,28 @@ body {
 }
 
 .cover-container {
-  max-width: 50em;
- height: 50em;
+  width: 100%;
+  max-width: 100%;
+  height: auto; /* Let it grow based on content */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .cover-container {
+    max-width: 50em; /* Limit width on larger screens */
+  }
 }
 
+
 .card {
-font-size: 1.0em;
-height: auto;}
+  font-size: 1rem;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
 
 @media (max-width: 768px) {
 	.card{

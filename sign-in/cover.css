@@ -26,7 +26,12 @@ body {
  height: auto;
 }
 
+.card {
+font-size: 1.0em;}
 
+@media (max-width: 768px) {
+	.card{
+font-size: 0.5em;}}
 /*
  * Header
  */

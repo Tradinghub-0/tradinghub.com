@@ -27,7 +27,8 @@ body {
 }
 
 .card {
-font-size: 1.0em;}
+font-size: 1.0em;
+height: 60em;}
 
 @media (max-width: 768px) {
 	.card{
